@@ -36,6 +36,7 @@ function hit(){
     scoreS.innerHTML = score;
     currentDiff-=0.01;
     scoreMult += 0.1;
-    clearTimeout(currentTimeId);
-    nextMove(currentDiff);
+    //clearTimeout(currentTimeId);
+    //nextMove(difficulty);
+    //move();
 }
