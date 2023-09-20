@@ -49,11 +49,18 @@ function timer(){
         }
     }
 }
-
+let radio = document.querySelector(".radio1");
 function play(){
     timerV = 30;
     score = 0;
-    currentDiff = 1;
+    if(radio.checked){
+
+        currentDiff = 1.5;
+    }
+    else{
+        currentDiff = 0.5;
+    }
+    console.log(currentDiff);
     scoreMult = 1;
     scoreS2.innerHTML = score;
     newHigh.style.display = "none";
@@ -91,8 +98,8 @@ function move(){
     target.style.left = posLeftT+"px";
     target.style.display = "block";
 }
-
-restart.addEventListener("click" , replay);
+let retry = document.querySelector(".retry");
+retry.addEventListener("click" , replay);
 
 let currentDiff = 1 ;
 let scoreMult = 1;
