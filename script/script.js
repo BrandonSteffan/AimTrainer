@@ -91,8 +91,8 @@ function move(){
     target.style.left = posLeftT+"px";
     target.style.display = "block";
 }
-
-restart.addEventListener("click" , replay);
+let retry = document.querySelector(".retry");
+retry.addEventListener("click" , replay);
 
 let currentDiff = 1 ;
 let scoreMult = 1;
