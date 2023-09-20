@@ -32,4 +32,12 @@ body {
   left: 450px;
   border-radius: 30px;
   display: none;
+}
+
+p {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fefefe;
+  font-size: 20px;
+  top: -30px;
 }/*# sourceMappingURL=style.css.map */
