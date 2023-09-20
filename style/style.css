@@ -75,6 +75,10 @@ body {
   color: #fefefe;
   font-size: 2rem;
 }
+.restart .newHigh {
+  color: #beca0d;
+  font-size: 2rem;
+}
 .restart .retry {
   width: 150px;
   height: 50px;
@@ -127,4 +131,12 @@ body {
 }
 .start .startB:hover {
   cursor: pointer;
+}
+
+.highscoreS {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  color: #fefefe;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
