@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #111111be;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.gamearea{
+    margin: auto;
+    align-self: center;
+    background-color: rgb(3, 3, 49);
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+    width: 1000px;
+    height: 750px;
+}
+
+.target{
+    position: absolute;
+    border: none;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    border-radius: 30px;
+}
