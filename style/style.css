@@ -34,10 +34,19 @@ body {
   display: none;
 }
 
-p {
+.score1 {
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   color: #fefefe;
   font-size: 20px;
   top: -30px;
+}
+
+.timer1 {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fefefe;
+  font-size: 20px;
+  top: -30px;
+  left: 900px;
 }/*# sourceMappingURL=style.css.map */

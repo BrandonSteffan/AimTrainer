@@ -1,11 +1,23 @@
 let target = document.querySelector(".target");
 let scoreS = document.querySelector(".score");
+let timerT = document.querySelector(".timer");
 let posTopT = Math.random()*710;
 let posLeftT = Math.random()*960
 target.style.top = posTopT +"px";
 target.style.left = posLeftT+"px";
 target.style.display = "block";
 let score = 0;
+let timerV = 30;
+function timer(){
+    if(timerV >=0){
+        timerT.innerHTML = timerV;
+        timerV--;
+    }
+    else{
+        clearTimeout(currentTimeId);
+    }
+}
+setInterval(timer,1000);
 function move(){
     target.style.display = "none";
     posTopT = Math.random()*710;
