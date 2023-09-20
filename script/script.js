@@ -7,15 +7,21 @@ let scoreP = document.querySelector(".score1");
 let sSpan = document.querySelector(".sSpan");
 let restart = document.querySelector(".restart");
 let gamearea = document.querySelector(".gamearea");
+let start = document.querySelector(".start");
+let startB = document.querySelector(".startB");
 restart.style.display = "none";
 let posTopT = Math.random()*710;
 let posLeftT = Math.random()*960
 target.style.top = posTopT +"px";
 target.style.left = posLeftT+"px";
 target.style.display = "block";
-gamearea.style.cursor ="crosshair";
+gamearea.style.cursor ="default";
+scoreP.style.display = "none";
+target.style.display = "none";
+timerP.style.display = "none";
+startB.addEventListener("click", play);
 let score = 0;
-let timerV = 30;
+let timerV = 0;
 function timer(){
     if(timerV >=0){
         timerT.innerHTML = timerV;
@@ -23,7 +29,7 @@ function timer(){
     }
     else{
         clearTimeout(currentTimeId);
-        target.removeEventListener("click", hit);
+        //target.removeEventListener("click", hit);
         scoreP.style.display = "none";
         target.style.display = "none";
         timerP.style.display = "none";
@@ -32,19 +38,38 @@ function timer(){
         scoreS.innerHTML = score;
     }
 }
-setInterval(timer,1000);
+
 function play(){
     timerV = 30;
     score = 0;
     currentDiff = 1;
     scoreMult = 1;
-    scoreS.innerHTML = score;
+    scoreS2.innerHTML = score;
     target.style.display = "block";
     scoreP.style.display = "block";
     timerP.style.display = "block";
+    start.style.display = "none";
     restart.style.display = "none";
+    gamearea.style.cursor ="crosshair";
     nextMove(currentDiff);
+    setInterval(timer,1000);
 }
+function replay(){
+    timerV = 30;
+    score = 0;
+    currentDiff = 1;
+    scoreMult = 1;
+    scoreS2.innerHTML = score;
+    target.style.display = "block";
+    scoreP.style.display = "block";
+    timerP.style.display = "block";
+    start.style.display = "none";
+    restart.style.display = "none";
+    gamearea.style.cursor ="crosshair";
+    nextMove(currentDiff);
+    //setInterval(timer,1000);
+}
+
 function move(){
     target.style.display = "none";
     posTopT = Math.random()*710;
@@ -54,11 +79,11 @@ function move(){
     target.style.display = "block";
 }
 
-restart.addEventListener("click" , play);
+restart.addEventListener("click" , replay);
 
 let currentDiff = 1 ;
 let scoreMult = 1;
-nextMove(currentDiff);
+//nextMove(currentDiff);
 
 currentTimeId=0
 
