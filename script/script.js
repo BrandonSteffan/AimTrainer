@@ -1,8 +1,11 @@
 let target = document.querySelector(".target");
 let scoreS = document.querySelector(".score");
 let timerT = document.querySelector(".timer");
+let timerP = document.querySelector(".timer1");
 let scoreP = document.querySelector(".score1");
-let sSpan = document.querySelector(".sSpan")
+let sSpan = document.querySelector(".sSpan");
+let restart = document.querySelector(".restart");
+restart.style.display = "none";
 let posTopT = Math.random()*710;
 let posLeftT = Math.random()*960
 target.style.top = posTopT +"px";
@@ -20,16 +23,24 @@ function timer(){
         target.removeEventListener("click", hit);
         scoreP.style.display = "none";
         target.style.display = "none";
-        scoreP.style.top = "45%";
-        scoreP.style.left = "35%";
-        scoreP.style.fontSize = "50px";
-        scoreP.style.zindex = "1";
-        sSpan.innerText = "Final Score: ";
-        scoreP.style.color = "green";
-        scoreP.style.display = "block";
+        timerP.style.display = "none";
+        restart.style.display = "flex";
+        scoreS.innerHTML = score;
     }
 }
 setInterval(timer,1000);
+function play(){
+    timerV = 2;
+    score = 0;
+    currentDiff = 1;
+    scoreMult = 1;
+    scoreS.innerHTML = score;
+    target.style.display = "block";
+    scoreP.style.display = "block";
+    timerP.style.display = "block";
+    restart.style.display = "none";
+    nextMove(currentDiff);
+}
 function move(){
     target.style.display = "none";
     posTopT = Math.random()*710;
@@ -38,6 +49,8 @@ function move(){
     target.style.left = posLeftT+"px";
     target.style.display = "block";
 }
+
+restart.addEventListener("click" , play);
 
 let currentDiff = 1 ;
 let scoreMult = 1;
