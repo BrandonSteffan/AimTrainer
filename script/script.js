@@ -19,6 +19,7 @@ function timer(){
         clearTimeout(currentTimeId);
         target.removeEventListener("click", hit);
         scoreP.style.display = "none";
+        target.style.display = "none";
         scoreP.style.top = "45%";
         scoreP.style.left = "35%";
         scoreP.style.fontSize = "50px";
