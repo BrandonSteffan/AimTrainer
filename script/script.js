@@ -112,10 +112,18 @@ target.addEventListener("click" , hit);
 function hit(){
     score+= scoreMult*100;
     scoreS2.innerHTML = score;
-    currentDiff-=0.01;
+    currentDiff-=0.05;
     scoreMult += 0.1;
     target.style.display = "none";
     //clearTimeout(currentTimeId);
     //nextMove(difficulty);
     //move();
+}
+
+gamearea.addEventListener("click", miss);
+
+function miss(){
+    currentDiff += 0.05;
+    scoreMult = 1;
+    console.log("miss");
 }
