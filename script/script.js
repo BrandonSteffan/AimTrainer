@@ -1,13 +1,15 @@
 let target = document.querySelector(".target");
 let scoreS = document.querySelector(".score");
 let timerT = document.querySelector(".timer");
+let scoreP = document.querySelector(".score1");
+let sSpan = document.querySelector(".sSpan")
 let posTopT = Math.random()*710;
 let posLeftT = Math.random()*960
 target.style.top = posTopT +"px";
 target.style.left = posLeftT+"px";
 target.style.display = "block";
 let score = 0;
-let timerV = 30;
+let timerV = 2;
 function timer(){
     if(timerV >=0){
         timerT.innerHTML = timerV;
@@ -16,6 +18,14 @@ function timer(){
     else{
         clearTimeout(currentTimeId);
         target.removeEventListener("click", hit);
+        scoreP.style.display = "none";
+        scoreP.style.top = "45%";
+        scoreP.style.left = "35%";
+        scoreP.style.fontSize = "50px";
+        scoreP.style.zindex = "1";
+        sSpan.innerText = "Final Score: ";
+        scoreP.style.color = "green";
+        scoreP.style.display = "block";
     }
 }
 setInterval(timer,1000);
