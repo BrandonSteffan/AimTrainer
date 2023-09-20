@@ -1,18 +1,21 @@
 let target = document.querySelector(".target");
-let scoreS = document.querySelector(".score");
+let scoreS = document.querySelector(".score3");
+let scoreS2 = document.querySelector(".score2");
 let timerT = document.querySelector(".timer");
 let timerP = document.querySelector(".timer1");
 let scoreP = document.querySelector(".score1");
 let sSpan = document.querySelector(".sSpan");
 let restart = document.querySelector(".restart");
+let gamearea = document.querySelector(".gamearea");
 restart.style.display = "none";
 let posTopT = Math.random()*710;
 let posLeftT = Math.random()*960
 target.style.top = posTopT +"px";
 target.style.left = posLeftT+"px";
 target.style.display = "block";
+gamearea.style.cursor ="crosshair";
 let score = 0;
-let timerV = 2;
+let timerV = 30;
 function timer(){
     if(timerV >=0){
         timerT.innerHTML = timerV;
@@ -25,12 +28,13 @@ function timer(){
         target.style.display = "none";
         timerP.style.display = "none";
         restart.style.display = "flex";
+        gamearea.style.cursor ="default";
         scoreS.innerHTML = score;
     }
 }
 setInterval(timer,1000);
 function play(){
-    timerV = 2;
+    timerV = 30;
     score = 0;
     currentDiff = 1;
     scoreMult = 1;
@@ -60,7 +64,6 @@ currentTimeId=0
 
 function nextMove(difficulty){
     currentTimeId = setTimeout(() => {
-        console.log("currentTimeId", currentTimeId)
         move();
         nextMove(currentDiff);
     },difficulty*1000);
@@ -70,7 +73,7 @@ target.addEventListener("click" , hit);
 
 function hit(){
     score+= scoreMult*100;
-    scoreS.innerHTML = score;
+    scoreS2.innerHTML = score;
     currentDiff-=0.01;
     scoreMult += 0.1;
     //clearTimeout(currentTimeId);
