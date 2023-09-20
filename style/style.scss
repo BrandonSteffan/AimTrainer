@@ -10,6 +10,7 @@ body{
     justify-content: center;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
 }
 
 .gamearea{
@@ -71,6 +72,45 @@ body{
         font-size: 2rem;
     }
     .retry{
+        width: 150px;
+        height: 50px;
+        color: #fefefe;
+        font-size: 1em;
+        font-weight: bolder;
+        background-color: green;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 0 10px black;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.start{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 30%;
+    left: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 10px black;
+    border-radius: 5px;
+    h1{
+        font-size: 36px;
+        color: #fefefe;
+    }
+    .startM{
+        width: 70%;
+        text-align: center;
+        font-size: 20px;
+        color: #fefefe;
+    }
+    .startB{
         width: 150px;
         height: 50px;
         color: #fefefe;

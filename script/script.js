@@ -76,6 +76,7 @@ function hit(){
     scoreS2.innerHTML = score;
     currentDiff-=0.01;
     scoreMult += 0.1;
+    target.style.display = "none";
     //clearTimeout(currentTimeId);
     //nextMove(difficulty);
     //move();
