@@ -15,6 +15,7 @@ function timer(){
     }
     else{
         clearTimeout(currentTimeId);
+        target.removeEventListener("click", hit);
     }
 }
 setInterval(timer,1000);
