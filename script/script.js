@@ -1,4 +1,5 @@
 let target = document.querySelector(".target");
+let scoreS = document.querySelector(".score");
 let posTopT = Math.random()*710;
 let posLeftT = Math.random()*960
 target.style.top = posTopT +"px";
@@ -15,17 +16,26 @@ function move(){
 }
 
 let currentDiff = 1 ;
+let scoreMult = 1;
 nextMove(currentDiff);
+
+currentTimeId=0
+
 function nextMove(difficulty){
-    setTimeout(() => {
+    currentTimeId = setTimeout(() => {
+        console.log("currentTimeId", currentTimeId)
         move();
         nextMove(currentDiff);
     },difficulty*1000);
 }
 
-target.addEventListener("click" , hit());
+target.addEventListener("click" , hit);
 
 function hit(){
-    score++;
-    move();
+    score+= scoreMult*100;
+    scoreS.innerHTML = score;
+    currentDiff-=0.01;
+    scoreMult += 0.1;
+    clearTimeout(currentTimeId);
+    nextMove(currentDiff);
 }
