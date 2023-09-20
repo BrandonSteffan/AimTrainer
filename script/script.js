@@ -54,7 +54,7 @@ function play(){
     timerV = 30;
     score = 0;
     currentDiff = 1;
-    scoreMult = 3;
+    scoreMult = 1;
     scoreS2.innerHTML = score;
     newHigh.style.display = "none";
     target.style.display = "block";
