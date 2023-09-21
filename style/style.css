@@ -59,6 +59,16 @@ body {
   z-index: -1;
 }
 
+.difficultyP {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fefefe;
+  font-size: 20px;
+  top: -30px;
+  left: 400px;
+  z-index: -1;
+}
+
 .restart {
   width: 400px;
   height: 200px;

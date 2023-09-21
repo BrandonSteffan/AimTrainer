@@ -11,6 +11,8 @@ let start = document.querySelector(".start");
 let startB = document.querySelector(".startB");
 let highScoreD = document.querySelector(".highscore");
 let newHigh = document.querySelector(".newHigh");
+let diff = document.querySelector(".diff");
+let difficultyP = document.querySelector(".difficultyP");
 restart.style.display = "none";
 let posTopT = Math.random()*710;
 let posLeftT = Math.random()*960
@@ -22,6 +24,7 @@ scoreP.style.display = "none";
 target.style.display = "none";
 timerP.style.display = "none";
 newHigh.style.display = "none";
+difficultyP.style.display = "none";
 startB.addEventListener("click", play);
 let score = 0;
 let timerV = 0;
@@ -38,6 +41,7 @@ function timer(){
         scoreP.style.display = "none";
         target.style.display = "none";
         timerP.style.display = "none";
+        difficultyP.style.display = "none";
         restart.style.display = "flex";
         gamearea.style.cursor ="default";
         scoreS.innerHTML = score;
@@ -60,6 +64,7 @@ function play(){
     target.style.display = "block";
     scoreP.style.display = "block";
     timerP.style.display = "block";
+    difficultyP.style.display = "block";
     start.style.display = "none";
     restart.style.display = "none";
     gamearea.style.cursor ="crosshair";
@@ -76,6 +81,7 @@ function replay(){
     target.style.display = "block";
     scoreP.style.display = "block";
     timerP.style.display = "block";
+    difficultyP.style.display = "block";
     start.style.display = "none";
     restart.style.display = "none";
     gamearea.style.cursor ="crosshair";
@@ -112,7 +118,9 @@ target.addEventListener("mousedown" , hit);
 function hit(){
     score+= scoreMult*100;
     scoreS2.innerHTML = score;
-    currentDiff-=0.01;
+    currentDiff-=0.02;
+    currentDiff = currentDiff.toFixed(2);
+    diff.innerHTML = currentDiff;
     scoreMult += 0.1;
     target.style.display = "none";
     clearTimeout(currentTimeId);
