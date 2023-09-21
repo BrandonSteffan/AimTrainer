@@ -107,7 +107,7 @@ function nextMove(difficulty){
     },difficulty*1000);
 }
 
-target.addEventListener("click" , hit);
+target.addEventListener("mousedown" , hit);
 
 function hit(){
     score+= scoreMult*100;
@@ -115,7 +115,7 @@ function hit(){
     currentDiff-=0.01;
     scoreMult += 0.1;
     target.style.display = "none";
-    //clearTimeout(currentTimeId);
-    //nextMove(difficulty);
+    clearTimeout(currentTimeId);
+    nextMove(currentDiff);
     //move();
 }
