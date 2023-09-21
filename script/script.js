@@ -60,6 +60,7 @@ function play(){
     currentDiff = 1;
     scoreMult = 1;
     scoreS2.innerHTML = score;
+    diff.innerHTML = currentDiff;
     newHigh.style.display = "none";
     target.style.display = "block";
     scoreP.style.display = "block";
@@ -77,6 +78,7 @@ function replay(){
     currentDiff = 1;
     scoreMult = 1;
     scoreS2.innerHTML = score;
+    diff.innerHTML = currentDiff;
     newHigh.style.display = "none";
     target.style.display = "block";
     scoreP.style.display = "block";
